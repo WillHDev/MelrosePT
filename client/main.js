@@ -4,13 +4,28 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import './templates/app/layout.html';
 import './templates/_partials/nav.html';
 import './templates/home/index.html';
+import './templates/home/about.html';
 // Router.route('/', function () {
 //   this.render('layout');
 // });
 
 
-Router.route('/', function () {
-  this.render('homeIndex');
+Router.route('/',  {
+  name: "homeIndex",
+  data: function() {
+    return {
+      message : "Welcome to MelrosePT"
+    }
+  }
+  
+});
+
+Router.route('/about', function () {
+  this.render('homeAbout');
+});
+
+Router.route('/contact', function () {
+  this.render('homeAbout');
 });
 //import './templates/main.html' 
 //import './server/routes.js';
